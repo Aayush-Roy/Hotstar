@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Disney+ Hotstar</title>
+    <link rel="icon" href="C:\Users\srira\OneDrive\Desktop\web\HTML-Personal site\disney-plus-clone-master\disney-plus-clone-master\7a135ce4-ec18-462a-b6ca-9a826a948920.png">
+  </head>
+  <body>
+    <style media="screen">
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  background: #0c111b;
+  position: relative;
+  font-family: roboto, sans-serif;
+}
+
+.navbar{
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 4%;
+  background: #0c111b;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo{
+  height: 70px;
+}
+
+.nav-links{
+  margin-top: 10px;
+  display: flex;
+  list-style:none;
+}
+
+.nav-items a{
+  text-decoration: none;
+  margin-left: 20px;
+  text-transform: capitalize;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.right-container{
+  display: block;
+  margin-left: auto;
+}
+
+.search-box{
+  border: none;
+  border-bottom: 1px solid #aaa;
+  background: transparent;
+  outline: none;
+  height: 30px;
+  color:#fff;
+  width: 250px;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 500;
+  transition: .5s;
+}
+
+.search-box:focus{
+  width: 400px;
+  border-color: #1f80e0;
+}
+.sub-btn{
+  background: #1f80e0;
+  height: 30px;
+  padding: 0 20px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  margin: 0 10px;
+}
+
+.login-link{
+  color: #fff;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.carousel-container{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    padding: 20px 0;
+    overflow-x: hidden;
+    margin-top: 80px;
+}
+
+.carousel{
+    display: flex;
+    width: 92%;
+    height: 100%;
+    position: relative;
+    margin: 0px auto;
+}
+
+.slider{
+    flex: 0 0 auto;
+    margin-right: 30px;
+    position: relative;
+    background: rgba(0, 0, 0,0.5);
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.slider img{
+    width: 70%;
+    min-height: 100%;
+    object-fit: cover;
+    display: block;
+    margin-left: auto;
+}
+
+.slide-content{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    background: linear-gradient(to right, #030b17 80%, #0c111b00);
+    color: #fff;
+}
+
+.movie-title{
+    padding-left: 50px;
+    text-transform: capitalize;
+    margin-top: 80px;
+}
+
+.movie-des{
+    width: 80%;
+    line-height: 30px;
+    padding-left: 50px;
+    margin-top: 30px;
+    opacity: 0.8;
+}
+.video-card-container{
+    position: relative;
+    width: 92%;
+    margin: auto;
+    height: 10vw;
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+}
+
+.video-card{
+    position: relative;
+    min-width: calc(100%/5 - 10px);
+    width: calc(100%/5 - 10px);
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #030b17;
+}
+
+.video-card-image,
+.card-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-video{
+    position: absolute;
+}
+
+.video-card:hover .video-card-image{
+    display: none;
+}
+.title{
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.movies-list{
+    width: 100%;
+    height: 220px;
+    position: relative;
+    margin: 10px 0 20px;
+}
+
+.card-container{
+    position: relative;
+    width: 92%;
+    padding-left: 10px;
+    height: 220px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+}
+
+.card-container::-webkit-scrollbar{
+    display: none;
+}
+
+.card{
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card:hover .card-body{
+    opacity: 1;
+}
+
+.card-body{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.name{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-top: 60%;
+}
+
+.des{
+    color: #fff;
+    opacity: 0.8;
+    margin: 5px 0;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.watchlist-btn{
+    position: relative;
+    width: 100%;
+    text-transform: capitalize;
+    background: none;
+    border: none;
+    font-weight: 500;
+    text-align: right;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 5px 0;
+    cursor: pointer;
+    padding: 10px 5px;
+    border-radius: 5px;
+}
+
+.watchlist-btn::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    height: 35px;
+    width: 35px;
+    background-image: url(images/add.png);
+    background-size: cover;
+    transform: scale(0.4);
+}
+
+.watchlist-btn:hover{
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.pre-btn,
+.nxt-btn{
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.pre-btn{
+    left: 0;
+    background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+}
+
+.nxt-btn{
+    right: 0;
+    background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+}
+
+.pre-btn img,
+.nxt-btn img{
+    width: 15px;
+    height: 20px;
+    opacity: 0;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img{
+    opacity: 1;
+}
+h6 {
+    text-align: right;
+}
+    </style>
+
+    <nav class="navbar">
+    <img src="images/logo.png" class="brand-logo" alt="">
+    <ul class="nav-links">
+        <li class="nav-items"><a href="#">TV</a></li>
+        <li class="nav-items"><a href="#">Movies</a></li>
+        <li class="nav-items"><a href="#">Sports</a></li>
+        <li class="nav-items"><a href="#">Premium</a></li>
+    </ul>
+    <div class="right-container">
+        <input type="text" class="search-box" placeholder="search">
+        <button class="sub-btn">Subscribe</button>
+        <a href="#" class="login-link">Login</a>
+    </div>
+</nav>
+<div class="carousel-container">
+    <div class="carousel">
+        <div class="slider">
+            <div class="slide-content">
+                <h1 class="movie-title">loki</h1>
+                <p class="movie-des">Loki is an American television series created by Michael Waldron for the streaming service Disney+, based on Marvel Comics featuring the character of the same name. It is the third television series in the Marvel Cinematic Universe (MCU) produced by Marvel Studios, sharing continuity with the films of the franchise. The series takes place after the events of the film Avengers: Endgame (2019), in which an alternate version of Loki created a new timeline.</p>
+            </div>
+            <img src="images/slider 1.PNG" alt="">
+                <h1 class="movie-title">mulan</h1>
+                <p class="movie-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit saepe eius ratione nostrum mollitia explicabo quae nam pariatur. Sint, odit?</p>
+            <img src="images/slider 3.PNG" alt="">
+                <h1 class="movie-title">winter soldier</h1>
+                <p class="movie-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit saepe eius ratione nostrum mollitia explicabo quae nam pariatur. Sint, odit?</p>
+            <img src="images/slider 12.PNG" alt="">
+                <h1 class="movie-title">avengers</h1>
+                <p class="movie-des">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit saepe eius ratione nostrum mollitia explicabo quae nam pariatur. Sint, odit?</p>
+            <img src="images/slider 1.PNG" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="video-card-container">
+    <div class="video-card">
+        <img src="images/disney.PNG" class="video-card-image" alt="">
+        <video src="videos/disney.mp4" mute loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+        <img src="images/pixar.PNG" class="video-card-image" alt="">
+        <video src="videos/pixar.mp4" mute loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+        <img src="images/marvel.PNG" class="video-card-image" alt="">
+        <video src="videos/marvel.mp4" mute loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+        <img src="images/star-wars.PNG" class="video-card-image" alt="">
+        <video src="videos/star-war.mp4" mute loop class="card-video"></video>
+    </div>
+    <div class="video-card">
+        <img src="images/geographic.PNG" class="video-card-image" alt="">
+        <video src="videos/geographic.mp4" mute loop class="card-video"></video>
+    </div>
+</div>
+<h1 class="title">recommended for you</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 4.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 5.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">thor</h2>
+                    <h6 class="des">Deprived of his mighty hammer mjolm,Thor must escape the other side of the universe to save his home,Asgard , from Helan the goddess of death.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 6.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 11.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">f vs f</h2>
+                    <h6 class="des">2hr 39 min . 2010 . Action . U/A 10+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 10.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">luca</h2>
+                    <h6 class="des">1 hr 35 min . 2021 . Animation . U/A 7+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 9.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">raya</h2>
+                    <h6 class="des">1 hr 47 min . 2021 . Animation .U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">dark phenoix</h2>
+                    <h6 class="des">Lorem ipsum dolor sit amet consectetur.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 8.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">soul</h2>
+                    <h6 class="des">1 hr 40 min . 2020 . Animation . U/A 7+ . English</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+        </div>
+   </div>
+   <h1 class="title">popular</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/poster 5.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Thor</h2>
+                    <h6 class="des">Deprived of his mighty hammer mjolm,Thor must escape the other side of the universe to save his home,Asgard , from Helan the goddess of death.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Pirates of Cariabbians</h2>
+                    <h6 class="des">2 hr 48 min . 2007 . Actio . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 10.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">luca</h2>
+                    <h6 class="des">1 hr 35 min . 2021 . Animation . U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 8.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">soul</h2>
+                    <h6 class="des">1 hr 40 min . 2020 . Animation . U/A 7+ . English</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 4.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 5.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">thor</h2>
+                    <h6 class="des">Deprived of his mighty hammer mjolm,Thor must escape the other side of the universe to save his home,Asgard , from Helan the goddess of death.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 6.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Avengers</h2>
+                    <h6 class="des">Lorem ipsum dolor sit amet consectetur.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 11.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">f vs f</h2>
+                    <h6 class="des">2hr 39 min . 2010 . Action . U/A 10+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 12.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">dark phenoix</h2>
+                    <h6 class="des">Lorem ipsum dolor sit amet consectetur.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 9.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">raya</h2>
+                    <h6 class="des">1 hr 47 min . 2021 . Animation .U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">pirates of the caribbean</h2>
+                    <h6 class="des">2 hr 48 min . 2007 . Actio . U/A 13+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 8.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">soul</h2>
+                    <h6 class="des">1 hr 40 min . 2020 . Animation . U/A 7+ . English</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+        </div>
+   </div>
+   <h1 class="title">blockbuster</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/poster 4.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 8.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">soul</h2>
+                    <h6 class="des">1 hr 40 min . 2020 . Animation . U/A 7+ . English</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">pirates of the caribbean</h2>
+                    <h6 class="des">2 hr 48 min . 2007 . Actio . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 10.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">luca</h2>
+                    <h6 class="des">1 hr 35 min . 2021 . Animation . U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 4.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 5.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">thor</h2>
+                    <h6 class="des">Deprived of his mighty hammer mjolm,Thor must escape the other side of the universe to save his home,Asgard , from Helan the goddess of death.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 10.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">luca</h2>
+                    <h6 class="des">1 hr 35 min . 2021 . Animation . U/A 7+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+        </div>
+   </div>
+   <h1 class="title">Popular Movies</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 10.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">luca</h2>
+                    <h6 class="des">1 hr 35 min . 2021 . Animation . U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 11.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">f vs f</h2>
+                    <h6 class="des">2hr 39 min . 2010 . Action . U/A 10+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">pirates of the caribbean</h2>
+                    <h6 class="des">2 hr 48 min . 2007 . Actio . U/A 13+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 9.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">raya</h2>
+                    <h6 class="des">1 hr 47 min . 2021 . Animation .U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+        </div>
+   </div>
+   <h1 class="title">trending</h1>
+    <div class="movies-list">
+        <button class="pre-btn"><img src="images/pre.png" alt=""></button>
+        <button class="nxt-btn"><img src="images/nxt.png" alt=""></button>
+        <div class="card-container">
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/poster 11.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">f vs f</h2>
+                    <h6 class="des">2hr 39 min . 2010 . Action . U/A 10+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 7.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">pirates of the caribbean</h2>
+                    <h6 class="des">2 hr 48 min . 2007 . Actio . U/A 13+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 9.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">raya</h2>
+                    <h6 class="des">1 hr 47 min . 2021 . Animation .U/A 7+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 1.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">Loki</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 2.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">mulan</h2>
+                    <h6 class="des">1 hr 55 min . 2020 . Action . U/A 13+.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 3.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">winter soldier</h2>
+                    <h6 class="des">1 Season . 6 Episodes . Superhero . U/A 13+ . Marvel</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 4.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">avengers</h2>
+                    <h6 class="des">2 hr 29 min . 2018 . superhero . U/A 13+</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="images/poster 5.png" class="card-img" alt="">
+                <div class="card-body">
+                    <h2 class="name">thor</h2>
+                    <h6 class="des">Deprived of his mighty hammer mjolm,Thor must escape the other side of the universe to save his home,Asgard , from Helan the goddess of death.</h6>
+                    <button class="watchlist-btn">add to watchlist</button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+   </div>
+   <!DOCTYPE html>
+
+ <html lang="en">
+
+ <head>
+
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Footer Template</title>
+
+   <!--Custom CSS-->
+   <link rel="stylesheet" href="style.css">
+
+   <!--Tailwind CSS-->
+   <script src="https://cdn.tailwindcss.com"></script>
+
+   <!--Font-Awesome-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+ </head>
+
+ <body>
+
+   <div class="my-[75px]">
+
+
+     <div class="flex flex-col mx-auto max-w-[1500px] h-auto">
+
+       <div class="flex lg:items-center lg:justify-between flex-col lg:flex-row gap-y-[45px] py-[30px] lg:py-0 px-[15px] sm:px-[30px] md:px-[40px] lg:px-[50px] xl:px-[75px] w-full h-auto lg:h-[380px] bg-gray-800">
+
+         <div class="lg:w-4/12">
+
+           <div class="flex items-center justify-center gap-x-[8px] mb-[30px] text-white"><i class="fa-solid fa-2xl fa-laptop-code"></i>Disney+ Hotstar</div>
+
+           <div class="text-center text-gray-200">Hotstar has been discontinued in the US, but you can enjoy LIVE cricket, your favorite Indian entertainment, & more with The Disney Bundle!</div>
+
+         </div>
+
+         <div class="flex justify-center sm:justify-between flex-wrap lg:flex-nowrap gap-y-[60px] gap-x-[90px] sm:gap-x-0 lg:w-7/12">
+
+           <div class="text-center sm:text-left">
+
+             <div class="mb-[18px] text-gray-400 text-sm font-bold select-none">Product</div>
+
+             <ul class="flex flex-col gap-[10px] text-gray-200">
+               <a class="hover:underline" href="#">
+                 <li>Overview</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Features</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Solutions</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Tutorials</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Pricing</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Releases</li>
+               </a>
+             </ul>
+
+           </div>
+
+           <div class="text-center sm:text-left">
+
+             <div class="mb-[18px] text-gray-400 text-sm font-bold select-none">Company</div>
+
+             <ul class="flex flex-col gap-[10px] text-gray-200">
+               <a class="hover:underline" href="#">
+                 <li>About us</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Careers</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Press</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>News</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Media kit</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Contact</li>
+               </a>
+             </ul>
+
+           </div>
+
+           <div class="text-center sm:text-left">
+
+             <div class="mb-[18px] text-gray-400 text-sm font-bold select-none">Resources</div>
+
+             <ul class="flex flex-col gap-[10px] text-gray-200">
+               <a class="hover:underline" href="#">
+                 <li>Blog</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Newsletter</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Events</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Help centre</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Tutorials</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Support</li>
+               </a>
+             </ul>
+
+           </div>
+
+           <div class="text-center sm:text-left">
+
+             <div class="mb-[18px] text-gray-400 text-sm font-bold select-none">Social</div>
+
+             <ul class="flex flex-col gap-[10px] text-gray-200">
+               <a class="hover:underline" href="#">
+                 <li>Twitter</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>LinkedIn</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Facebook</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Github</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>AngelList</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Dribbble</li>
+               </a>
+             </ul>
+
+           </div>
+
+           <div class="text-center sm:text-left">
+
+             <div class="mb-[18px] text-gray-400 text-sm font-bold select-none">Legal</div>
+
+             <ul class="flex flex-col gap-[10px] text-gray-200">
+               <a class="hover:underline" href="#">
+                 <li>Terms</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Privacy</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Cookies</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Licenses</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Settings</li>
+               </a>
+               <a class="hover:underline" href="#">
+                 <li>Contact</li>
+               </a>
+             </ul>
+
+           </div>
+
+         </div>
+
+       </div>
+
+       <div class="flex items-center justify-evenly sm:justify-between flex-col sm:flex-row sm:px-[30px] md:px-[40px] lg:px-[50px] xl:px-[75px] w-full h-[100px] bg-gray-900">
+
+         <div class="text-gray-400">Disney+ Hotstar</div>
+
+         <ul class="flex gap-[15px] text-gray-400 cursor-pointer">
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-twitter"></i></li>
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-linkedin"></i></li>
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-facebook"></i></li>
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-github"></i></li>
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-angellist"></i></li>
+           <li class="ease-in duration-200 hover:text-gray-100"><i class="fa-brands fa-xl fa-dribbble"></i></li>
+         </ul>
+
+       </div>
+
+     </div>
+
+   </div>
+<script src="data.js" charset="utf-8"></script>
+<script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>
